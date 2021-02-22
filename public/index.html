@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <style>
+            body {
+                margin : 0;
+            }
+            canvas {
+                width : 100%;
+                height : 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id="canvas" >Your browser does not seem to support HTML5 canvas.</canvas>
+        <script src="webgl_rust.js"></script>
+        <script>
+            window.addEventListener("load", function setupWebGL (evt) {
+                wasm_bindgen("./webgl_rust_bg.wasm").then(function(wasm){
+                    console.log("hi from container");
+                    console.log(wasm.main());
+                })
+
+            }, false);
+        </script>
+    </body>
+</html>

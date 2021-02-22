@@ -1,0 +1,1 @@
+../dist/webgl_rust.js
